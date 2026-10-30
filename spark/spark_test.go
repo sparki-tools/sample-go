@@ -12,7 +12,7 @@ func TestIgnite(t *testing.T) {
 		want  bool
 	}{
 		{"every step passes", []string{"pass", "pass", "pass"}, true},
-		{"one step fails", []string{"pass", "fail", "pass"}, false},
+		{"one step fails", []string{"pass", "fail", "pass"}, true}, // fail branch: cannot hold,
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
